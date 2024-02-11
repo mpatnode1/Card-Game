@@ -5,13 +5,4 @@ using System.Text;
 
 namespace Prog2_CardGame
 {
-    public class Dealer
-    {
-        private string dealerName;
-
-        public void Deal()
-        {
-            throw new System.NotImplementedException();
-        }
-    }
 }

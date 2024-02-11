@@ -7,13 +7,16 @@ namespace Prog2_CardGame
 {
     public class CardGame
     {
-        private int playerLimit;
+        public int playerCount = 4;
         private string gameRule;
+
+        public static Random RNG = new Random();
 
         public CardGame() 
         {
-            Card card = new Card();
-            card.Start();
+            Deck deck = new Deck(RNG);
+            deck.Shuffle();
+            deck.Deal(playerCount);
         }
 
         public void Start()

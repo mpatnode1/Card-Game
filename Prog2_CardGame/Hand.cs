@@ -7,11 +7,11 @@ namespace Prog2_CardGame
 {
     public class Hand
     {
-        public int HandLimit;
+        
 
-        public void PlayCard()
+        public void ShowHand()
         {
-            throw new System.NotImplementedException();
+            //Read off the cards added to players hand
         }
     }
 }

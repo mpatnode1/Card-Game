@@ -5,10 +5,9 @@ using System.Text;
 
 namespace Prog2_CardGame
 {
-    public class DrawPile
+    public class StandardDeck : CardPile
     {
-
-        public void Shuffle()
+        public StandardDeck(Random RNG)
         {
             throw new System.NotImplementedException();
         }

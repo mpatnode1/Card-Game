@@ -10,19 +10,19 @@
   <Class Name="Prog2_CardGame.CardGame">
     <Position X="0.5" Y="3" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAQAAUCAAAAAAAAACAAAQAAAAAAAABAAAAAAAAAA=</HashCode>
+      <HashCode>ABAAAQAAUCAAAAAAAAACAAAQAAAAQAAAAAAAAAAAAAA=</HashCode>
       <FileName>Game.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Prog2_CardGame.Card">
     <Position X="9" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAADAABAACAAAAAAAAAAAAAAAgAAAAAAAAAgQAAAAAA=</HashCode>
+      <HashCode>AAABAABAAAAAAAAAAAAAAAAAAgAAAAAAAAAgAAAAAAA=</HashCode>
       <FileName>Card.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Prog2_CardGame.Menu">
-    <Position X="2.25" Y="0.75" Width="1.5" />
+    <Position X="2.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
       <FileName>Menu.cs</FileName>
@@ -35,28 +35,32 @@
       <FileName>Player.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Prog2_CardGame.Dealer">
-    <Position X="7" Y="0.5" Width="1.75" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIBAAAAAA=</HashCode>
-      <FileName>Dealer.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Prog2_CardGame.DrawPile">
+  <Class Name="Prog2_CardGame.Deck">
     <Position X="10.75" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAA=</HashCode>
-      <FileName>DrawPile.cs</FileName>
+      <HashCode>AAACAAAAAAAAAgAAAAAAAAAIAAAAQAAAAAAIQAAAEAA=</HashCode>
+      <FileName>Deck.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Prog2_CardGame.Hand">
     <Position X="12.5" Y="2.75" Width="1.5" />
-    <Members>
-      <Field Name="HandLimit" Hidden="true" />
-    </Members>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAEAAAAAA=</HashCode>
+      <HashCode>AAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Hand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Prog2_CardGame.CardPile">
+    <Position X="7.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAgAAAAAAAAAIAAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>CardPile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Prog2_CardGame.StandardDeck">
+    <Position X="7.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>StandardDeck.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
