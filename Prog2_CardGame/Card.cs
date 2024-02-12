@@ -23,6 +23,9 @@ namespace Prog2_CardGame
 
         }
 
-       
+        public override string ToString()
+        {
+            return $"{this.Rank} of {this.Suit}";
+        }
     }
 }

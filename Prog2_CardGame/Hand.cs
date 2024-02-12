@@ -5,13 +5,4 @@ using System.Text;
 
 namespace Prog2_CardGame
 {
-    public class Hand
-    {
-        
-
-        public void ShowHand()
-        {
-            //Read off the cards added to players hand
-        }
-    }
 }
