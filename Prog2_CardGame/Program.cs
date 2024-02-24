@@ -4,8 +4,8 @@
     {
         static void Main()
         {
-            CardGame cardGame = new CardGame(4);
-            cardGame.Start();
+            new Menu();
+            
         }
     }
 }

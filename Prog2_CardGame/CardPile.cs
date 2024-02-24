@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using static Prog2_CardGame.Utility;
 
 namespace Prog2_CardGame
 {
@@ -26,7 +27,6 @@ namespace Prog2_CardGame
                 Cards.RemoveAt(0);
 
             }
-            Console.WriteLine(temp);
             return temp;
         }
 
@@ -45,6 +45,7 @@ namespace Prog2_CardGame
             return String.Join(", ", Cards);
         }
 
+        //Fisher-Yates Shuffle
         public void Shuffle()
         {
             int n = Cards.Count;
