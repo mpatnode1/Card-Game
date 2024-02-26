@@ -49,7 +49,8 @@ namespace Prog2_CardGame
             char input;
             Print("Type a number to select which card game you would like to play, or view credits.");
             Print("1. Same Or Different");
-            Print("2. View Credits");
+            Print("2. Same Or Different");
+            Print("3. View Credits");
             
             while (true)
             {
@@ -60,6 +61,8 @@ namespace Prog2_CardGame
                     case '1':
                         return new SameOrDifferent();
                     case '2':
+                        return new HigherOrLower();
+                    case '3':
                         Print("Credits");
                         Pause();
                         break;
