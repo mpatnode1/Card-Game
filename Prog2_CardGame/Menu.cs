@@ -50,7 +50,8 @@ namespace Prog2_CardGame
             Print("Type a number to select which card game you would like to play, or view credits.");
             Print("1. Same Or Different");
             Print("2. Higher Or Lower");
-            Print("3. View Credits");
+            Print("3. Highest Match");
+            Print("4. View Credits");
             
             while (true)
             {
@@ -63,6 +64,8 @@ namespace Prog2_CardGame
                     case '2':
                         return new HigherOrLower();
                     case '3':
+                        return new HighestMatch();
+                    case '4':
                         Print("Credits");
                         Pause();
                         break;

@@ -33,7 +33,7 @@ namespace Prog2_CardGame
                 Score = new int[playerCount];
             }
             
-            for (int i = 0; i < playerCount; i++) 
+            for (int i = 0; i < playerCount + 1; i++) 
             {
                 PlayerHands.Add(new CardPile(RNG));
             }

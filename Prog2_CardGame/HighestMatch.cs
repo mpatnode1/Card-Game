@@ -11,6 +11,8 @@ namespace Prog2_CardGame
     internal class HighestMatch : CardGame, IPlay
     {
         int RoundsHighestMatch = 10;
+        public int numberSwapped = 0;
+
         public HighestMatch() : base(1, new StandardDeck(RNG))
         {
             Rounds = RoundsHighestMatch;
@@ -18,12 +20,15 @@ namespace Prog2_CardGame
 
         public void Instructions()
         {
-            Print(" ");
+            Print("The");
             Print("Aces are low, and Jack, Queen, and King are high.");
         }
 
         public void Play()
         {
+            int dealerHand = CalculateDealerHand();
+            //display player hand
+            //ask for input for hand
 
         }
 
@@ -35,8 +40,85 @@ namespace Prog2_CardGame
 
         public void Setup()
         {
-            //dealer is going to be handed 4 cards that will remain the same for the entire game
-            //four cards will be dealt to the player
+            DrawPile.Shuffle();
+            for (int i = 0; i < PlayerHands.Count; i++)
+            {
+                var temp = PlayerHands[i];
+                var draw = DrawPile.Draw(4);
+                temp.AddRange(draw);
+            }
+            Print("");
+            Print("This is your starting hand:");
+            PrintHand();
+            Print("");
+
+            Print("Would you like to swap a card?");
+            Print("Type a number 1 through 4 to swap.");
+
+            char input;
+            
+            bool finishedInput = true;
+            while (finishedInput == true)
+            {
+                input = ReadKey().KeyChar;
+                Print("");
+                switch (input)
+                {
+                    case '1':
+                        numberSwapped = 1;
+                        swapCards();
+                        finishedInput = false;
+                        break;
+                    case '2':
+                        numberSwapped = 2;
+                        finishedInput = false;
+                        break;
+                    case '3':
+                        numberSwapped = 3;
+                        finishedInput = false;
+                        break;
+                    case '4':
+                        numberSwapped = 4;
+                        finishedInput = false;
+                        break;
+                    default:
+                        Print("Please type in a number.");
+                        finishedInput = true;
+                        break;
+                }
+            }
+
+
+        }
+
+        void swapCards()
+        {
+           Card cardGettingSwapped = PlayerHands[0].Cards[numberSwapped - 1];
+           DrawPile.Add(cardGettingSwapped);
+           PlayerHands[0].Remove(cardGettingSwapped);
+            
+            var temp = PlayerHands[0];
+            var draw = DrawPile.Draw(1);
+            temp.Insert(numberSwapped - 1, draw);
+
+
+
+        }
+
+        public void PrintHand()
+        {
+            Print($"1. {PlayerHands[0].Cards[0]}");
+            Print($"2. {PlayerHands[0].Cards[1]}");
+            Print($"3. {PlayerHands[0].Cards[2]}");
+            Print($"4. {PlayerHands[0].Cards[3]}");
+        }
+
+        public void PrintDealersHand()
+        {
+            Print($"1. {PlayerHands[1].Cards[0]}");
+            Print($"2. {PlayerHands[1].Cards[1]}");
+            Print($"3. {PlayerHands[1].Cards[2]}");
+            Print($"4. {PlayerHands[1].Cards[3]}");
         }
 
         public int CalculateDealerHand()

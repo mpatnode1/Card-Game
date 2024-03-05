@@ -8,7 +8,7 @@ namespace Prog2_CardGame
 {
     public class CardPile
     {
-        protected List<Card> Cards;
+        public List<Card> Cards;
         Random RNG;
 
         public CardPile(Random RNG) 
