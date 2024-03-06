@@ -40,6 +40,11 @@ namespace Prog2_CardGame
             Cards.AddRange(cards);
         }
 
+        public void InsertRange(int index, Card[] cards)
+        {
+            Cards.InsertRange(index, cards);
+        }
+
         public override string ToString()
         { 
             return String.Join(", ", Cards);

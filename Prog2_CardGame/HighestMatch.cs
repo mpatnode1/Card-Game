@@ -71,14 +71,17 @@ namespace Prog2_CardGame
                         break;
                     case '2':
                         numberSwapped = 2;
+                        swapCards();
                         finishedInput = false;
                         break;
                     case '3':
                         numberSwapped = 3;
+                        swapCards();
                         finishedInput = false;
                         break;
                     case '4':
                         numberSwapped = 4;
+                        swapCards();
                         finishedInput = false;
                         break;
                     default:
@@ -93,16 +96,18 @@ namespace Prog2_CardGame
 
         void swapCards()
         {
-           Card cardGettingSwapped = PlayerHands[0].Cards[numberSwapped - 1];
-           DrawPile.Add(cardGettingSwapped);
-           PlayerHands[0].Remove(cardGettingSwapped);
-            
+            //removes card from hand and puts it to the back of drawpile
+            Card cardGettingSwapped = PlayerHands[0].Cards[numberSwapped - 1];
+            DrawPile.Add(cardGettingSwapped);
+            PlayerHands[0].Cards.RemoveAt(numberSwapped -1);
+
+            //draws card and inserts it into the spot that was removed
             var temp = PlayerHands[0];
             var draw = DrawPile.Draw(1);
-            temp.Insert(numberSwapped - 1, draw);
+            
+            temp.InsertRange(numberSwapped - 1, draw);
 
-
-
+            PrintHand();
         }
 
         public void PrintHand()
