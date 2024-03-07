@@ -79,10 +79,7 @@ namespace Prog2_CardGame
             throw new System.NotImplementedException();
         }
 
-        public void DeclareWinner()
-        {
-            throw new System.NotImplementedException();
-        }
+        
     }
 }
 /*

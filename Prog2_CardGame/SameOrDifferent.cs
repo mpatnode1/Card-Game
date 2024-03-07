@@ -37,9 +37,10 @@ namespace Prog2_CardGame
             for (int i = 0; i < Rounds; i++)
             {
                 Pause();
+                Print("");
+
                 PrintScore();
                 Print($"Round {i + 1}");
-                Pause();
 
                 Print("The First Card Drawn Is:");
                 Print("");

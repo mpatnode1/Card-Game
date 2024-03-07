@@ -8,6 +8,8 @@ namespace Prog2_CardGame
 {
     public class CardPile
     {
+        public string[] Suits = { "Hearts", "Clubs", "Spades", "Diamonds" };
+
         public List<Card> Cards;
         Random RNG;
 
