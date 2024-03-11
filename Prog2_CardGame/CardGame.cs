@@ -15,23 +15,17 @@ namespace Prog2_CardGame
         protected CardPile DrawPile = new CardPile(RNG);
 
         protected int WinScore;
-        protected int[] Score;
         protected int Rounds;
+
+        protected Player[] playerNames;
 
         protected static Random RNG = new Random();
 
         public CardGame(int playerCount, CardPile StartingPile)
         {
-           
+            playerNames = new Player[playerCount];
+
             DrawPile = StartingPile;
-            if (playerCount == 0)
-            {
-                Score = new int [1];
-            }
-            else
-            {
-                Score = new int[playerCount];
-            }
             
             for (int i = 0; i < playerCount + 1; i++) 
             {
@@ -39,26 +33,51 @@ namespace Prog2_CardGame
             }
                 
         }
+
+        public Player[] GetPlayerNames()
+        {
+            Player[] temp = new Player[playerNames.Length];
+
+            Console.WriteLine(playerNames.Length);
+
+            for (int i = 0; i < playerNames.Length; i++)
+            {
+                Player player = new Player();
+                player.Name = "Steven";
+
+                Print($"What is Player {i + 1}'s name?");
+                Print("Type in below:");
+
+                player.Name = ReadLine();
+                temp[i] = player;
+
+                Print("Welcome " + player.Name);
+            }
+
+            return temp;
+        }
+
+
         /// <summary>
         /// Print all current players scores.
         /// </summary>
         protected void PrintScore()
         {
-            for (int i = 0; i < Score.Length; i++)
+            foreach (Player player in playerNames)
             {
-                Print($"Player {i + 1} Score: {Score[i]}");
+                Print($"{player.Name}'s Score: {player.Score}");
 
             }
         }
 
-        protected int? CheckWin()
+        protected Player? CheckWin()
         {
-            for (int i = 0; i < Score.Length; i++)
+            foreach (Player player in playerNames)
             {
-                if (Score[i] == WinScore)
+                if (player.Score == WinScore)
                 {
-                    Print($"Player {i + 1} has won");
-                    return i;
+                    Print($"{player.Name} has won");
+                    return player;
                 }
 
             }

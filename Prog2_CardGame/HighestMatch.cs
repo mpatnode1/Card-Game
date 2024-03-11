@@ -22,14 +22,14 @@ namespace Prog2_CardGame
         //changes to current after first round, final at last round
         string handInTextState = "starting";
 
-        public HighestMatch() : base(1, new StandardDeck(RNG))
+        public HighestMatch() : base(2, new StandardDeck(RNG))
         {
             Rounds = RoundsHighestMatch;
         }
 
         public void Instructions()
         {
-            Print("Both the Dealer and the Player start the game with a hand of four cards.");
+            Print("Both the Dealer or Player 2 and the Player start the game with a hand of four cards.");
             Print("The player will be able to choose one of their cards each round to swap out");
             Print("The replacing card will be randomly drawn from the drawpile.");
             Print("The player will have a maximum of 10 rounds to finish swapping their hand.");
@@ -60,6 +60,7 @@ namespace Prog2_CardGame
         public void Play()
         {
             dealerHand = CalculateHand(false);
+            playerNames[1].Score = dealerHand;
 
             Print("");
             PrintHand();
@@ -75,9 +76,6 @@ namespace Prog2_CardGame
                 handInTextState = "current";
                 char wantSwapInput;
                 bool finishedWantSwapInput = true;
-
-                            
-
                             char input;
 
                             bool finishedInput = true;
@@ -119,11 +117,6 @@ namespace Prog2_CardGame
                                 }
 
                             }
-
-                        
-                    
-                   
-
                 
             }
             //ends game if player has not already chosen to do so
@@ -139,6 +132,7 @@ namespace Prog2_CardGame
             
             handInTextState = "final";
             int finalHandScore = CalculateHand(true);
+            playerNames[0].Score = finalHandScore;
 
             Print("");
             PrintHand();
@@ -167,6 +161,7 @@ namespace Prog2_CardGame
         }
         public void Setup()
         {
+            playerNames = GetPlayerNames();
 
             DrawPile.Shuffle();
             for (int i = 0; i < PlayerHands.Count; i++)

@@ -12,7 +12,7 @@ namespace Prog2_CardGame
     {
         int WinScoreSameOr = 5;
         int RoundsSameOr = 10;
-        public SameOrDifferent() : base(0, new TwoSuitDeck(RNG))
+        public SameOrDifferent() : base(1, new TwoSuitDeck(RNG))
         {
             WinScore = WinScoreSameOr;
             Rounds = RoundsSameOr;
@@ -30,13 +30,13 @@ namespace Prog2_CardGame
 
         public void Setup()
         {
+            playerNames = GetPlayerNames();
             DrawPile.Shuffle();
         }
         public void Play()
         {
             for (int i = 0; i < Rounds; i++)
             {
-                Pause();
                 Print("");
 
                 PrintScore();
@@ -85,7 +85,7 @@ namespace Prog2_CardGame
                     Print("");
                     Print("You answered correctly! +1 Point");
                     Print("");
-                    Score[0] += 1;
+                    playerNames[0].AddPoint();
                 }
                 else
                 {

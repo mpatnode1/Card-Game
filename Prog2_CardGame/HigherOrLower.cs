@@ -12,7 +12,7 @@ namespace Prog2_CardGame
     {
         int WinScoreHigher = 5;
         int RoundHigher = 10;
-        public HigherOrLower() : base(0, new StandardDeck(RNG))
+        public HigherOrLower() : base(1, new StandardDeck(RNG))
         {
             WinScore = WinScoreHigher;
             Rounds = RoundHigher;
@@ -29,6 +29,7 @@ namespace Prog2_CardGame
         }
         public void Setup()
         {
+            playerNames = GetPlayerNames();
             DrawPile.Shuffle();
         }
 
@@ -87,7 +88,7 @@ namespace Prog2_CardGame
                         Print("The value was lower.");
                         Print("You answered correctly! +1 Point");
                         Print("");
-                        Score[0] += 1;
+                        playerNames[0].AddPoint();
                     }
                     else
                     {
@@ -104,7 +105,7 @@ namespace Prog2_CardGame
                         Print("");
                         Print("You answered correctly! +1 Point");
                         Print("");
-                        Score[0] += 1;
+                        playerNames[0].AddPoint();
                     }
                     else
                     {

@@ -7,7 +7,28 @@ namespace Prog2_CardGame
 {
     public class Player
     {
-        private string playerName;
+        private int score;
+
+
+        public int Score
+        {
+            get { return score; }
+            set { Score = value; }
+        }
+
+
+        private string name; 
+
+        public string Name 
+        {
+            get { return name; }
+            set { name = value; }
+        }
+
+        public void AddPoint()
+        {
+            score++;
+        }
 
         public void Draw()
         {
