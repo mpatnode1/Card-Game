@@ -52,47 +52,8 @@ namespace Prog2_CardGame
                 Print("Will the next card be same or different.");
                 Print("Type 1 for same or 2 for different.");
                 Print("");
-                char input;
-                bool guess = true;
-                bool finishedInput = true;
-                while (finishedInput == true)
-                {
-                    input = ReadKey().KeyChar;
-                    switch (input)
-                    {
-                        case '1':
-                            Print("1. Same");
-                            guess = true;
-                            finishedInput = false;
-                            break;
-                        case '2':
-                            Print("2. Different");
-                            guess = false;
-                            finishedInput = false;
-                            break;
-                        default:
-                            Print("Please type in a number.");
-                            finishedInput = true;
-                            break;
-                    }
-                }
-                var nextCard = DrawPile.Draw(1)[0];
-                Print("");
-                Print("The next card drawn is:");
-                Print(nextCard.ToString());
-                if ((currentCard.Suit == nextCard.Suit) == guess)
-                {
-                    Print("");
-                    Print("You answered correctly! +1 Point");
-                    Print("");
-                    playerNames[0].AddPoint();
-                }
-                else
-                {
-                    Print("");
-                    Print("You answered incorrectly.");
-                    Print("");
-                }
+
+                CheckGuessToNextCard(GetPlayerGuess(), currentCard);
 
                 if (CheckWin() != null)
                 {
@@ -102,6 +63,7 @@ namespace Prog2_CardGame
                     Print("");
                     return;
                 }
+
             }
             Pause();
             Print("You Lose!");
@@ -109,6 +71,60 @@ namespace Prog2_CardGame
                 
             
         }
+
+        private bool GetPlayerGuess()
+        {
+            char input;
+            bool guess = true;
+            bool finishedInput = true;
+            while (finishedInput == true)
+            {
+                input = ReadKey().KeyChar;
+                switch (input)
+                {
+                    case '1':
+                        Print("1. Same");
+                        guess = true;
+                        finishedInput = false;
+                        break;
+                    case '2':
+                        Print("2. Different");
+                        guess = false;
+                        finishedInput = false;
+                        break;
+                    default:
+                        Print("Please type in a number.");
+                        finishedInput = true;
+                        break;
+                }
+            }
+
+            return guess;
+        }
+
+        private void CheckGuessToNextCard(bool playerGuess, Card? currentCardInPlay)
+        {
+            var nextCard = DrawPile.Draw(1)[0];
+            Print("");
+            Print("The next card drawn is:");
+            Print(nextCard.ToString());
+            if ((currentCardInPlay.Suit == nextCard.Suit) == playerGuess)
+            {
+                Print("");
+                Print("You answered correctly! +1 Point");
+                Print("");
+                playerNames[0].AddPoint();
+            }
+            else
+            {
+                Print("");
+                Print("You answered incorrectly.");
+                Print("");
+            }
+
+            
+        }
     }
+
 }
 
